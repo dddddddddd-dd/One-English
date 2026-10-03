@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One English — Школа английского языка в Шымкенте | Курсы от Starter до Advanced и IELTS</title>
+  <meta name="description" content="Премиальная школа английского языка One English в Шымкенте с 2020 года. 2 филиала, 15+ преподавателей, курсы для детей, школьников, подростков и взрослых, подготовка к IELTS 7.5–8.0, Speaking Club, летний лагерь в Малайзии и OneEnglishCoin.">
+  <meta name="keywords" content="английский язык Шымкент, курсы английского Шымкент, IELTS Шымкент, One English, языковая школа Шымкент, Speaking Club">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="One English — Школа английского языка в Шымкенте">
+  <meta property="og:description" content="Курсы английского для всех возрастов, подготовка к IELTS, Speaking Club, лагеря и мотивационная система OneEnglishCoin.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="scrollProgressBar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Ambient Floating Background Particles (Interactive) -->
+  <div class="ambient-canvas-wrapper" aria-hidden="true">
+    <canvas id="ambientCanvas"></canvas>
+  </div>
+
+  <!-- =========================================================================
+       0. HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="One English — Главная">
+        <span class="logo-mark">
+          <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="12" fill="#0F2A6B"/>
+            <path d="M12 28V12L20 20L28 12V28" stroke="#FFB703" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="27" r="2.5" fill="#FFB703"/>
+          </svg>
+        </span>
+        <div class="logo-text">
+          <span class="brand-name">ONE<span class="brand-accent">ENGLISH</span></span>
+          <span class="brand-sub">Language School · Shymkent</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="#programs" class="nav-link">Направления</a></li>
+          <li><a href="#levels" class="nav-link">Уровни</a></li>
+          <li><a href="#format" class="nav-link">Формат</a></li>
+          <li><a href="#ielts" class="nav-link nav-badge-link">IELTS <span class="nav-badge">7.5+</span></a></li>
+          <li><a href="#coins" class="nav-link">Coins 🪙</a></li>
+          <li><a href="#speaking" class="nav-link">Speaking Club</a></li>
+          <li><a href="#camp" class="nav-link">Лагерь</a></li>
+          <li><a href="#abroad" class="nav-link">За рубежом</a></li>
+          <li><a href="#about" class="nav-link">О школе</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contacts" class="btn btn-accent btn-sm header-cta">
+          <span>Записаться</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <!-- Mobile Burger Button -->
+        <button id="burgerBtn" class="burger-btn" aria-label="Открыть мобильное меню" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <nav class="mobile-nav" aria-label="Мобильная навигация">
+          <ul class="mobile-nav-list">
+            <li><a href="#programs" class="mobile-nav-link">Направления обучения</a></li>
+            <li><a href="#levels" class="mobile-nav-link">Уровни (A1–C1)</a></li>
+            <li><a href="#format" class="mobile-nav-link">Формат обучения</a></li>
+            <li><a href="#ielts" class="mobile-nav-link">IELTS подготовка (7.5–8.0)</a></li>
+            <li><a href="#coins" class="mobile-nav-link">One English Coins 🪙</a></li>
+            <li><a href="#speaking" class="mobile-nav-link">Speaking Club</a></li>
+            <li><a href="#camp" class="mobile-nav-link">Летний лагерь (Малайзия)</a></li>
+            <li><a href="#abroad" class="mobile-nav-link">Обучение за рубежом</a></li>
+            <li><a href="#about" class="mobile-nav-link">О школе</a></li>
+            <li><a href="#faq" class="mobile-nav-link">Вопросы и ответы (FAQ)</a></li>
+            <li><a href="#contacts" class="mobile-nav-link">Филиалы и Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-drawer-footer">
+          <a href="#contacts" class="btn btn-accent btn-full mobile-cta-btn">Записаться на пробный урок</a>
+          <div class="mobile-contact-chips">
+            <a href="tel:+77473333536" class="chip-link">📞 +7 747 333 35 36</a>
+            <a href="https://wa.me/77473333536" target="_blank" rel="noopener noreferrer" class="chip-link">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         1. HERO SECTION (Dark Deep Blue #0F2A6B)
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-decor" aria-hidden="true">
+        <div class="decor-circle circle-1"></div>
+        <div class="decor-circle circle-2"></div>
+        <div class="decor-grid-pattern"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge reveal-fade-up">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Шымкент, Казахстан · Работаем с 2020 года</span>
+          </div>
+
+          <h1 class="hero-title reveal-fade-up" data-delay="100">
+            Школа английского языка <span class="text-gold">One English</span>
+            <span class="hero-typewriter-wrap">
+              <span id="typewriterText" class="typewriter-text"></span>
+              <span class="typewriter-cursor">|</span>
+            </span>
+          </h1>
+
+          <p class="hero-subtitle reveal-fade-up" data-delay="200">
+            Курсы для детей, школьников, подростков и взрослых в Шымкенте. Системный подход, опытные наставники и уверенный результат на каждом этапе.
+          </p>
+
+          <div class="hero-cta-group reveal-fade-up" data-delay="300">
+            <a href="#contacts" class="btn btn-accent btn-lg btn-shine">
+              <span>Записаться на пробный урок</span>
+              <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#programs" class="btn btn-ghost btn-lg">
+              <span>Узнать больше</span>
+              <svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Quick Stats Pills -->
+          <div class="hero-quick-features reveal-fade-up" data-delay="400">
+            <div class="quick-pill">
+              <span class="pill-icon">📍</span>
+              <span>2 филиала: Sever & Yangi Shahar</span>
+            </div>
+            <div class="quick-pill">
+              <span class="pill-icon">🎯</span>
+              <span>IELTS до 8.0</span>
+            </div>
+            <div class="quick-pill">
+              <span class="pill-icon">🪙</span>
+              <span>Система OneEnglishCoin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive SVG Graphic -->
+        <div class="hero-visual reveal-scale" id="heroVisualWrap">
+          <div class="hero-visual-card main-card">
+            <!-- Center Floating Showcase -->
+            <div class="hero-center-badge">
+              <div class="center-crest">
+                <span class="crest-letter">1</span>
+                <span class="crest-label">ONE ENG</span>
+              </div>
+            </div>
+
+            <!-- Floating 3D/Interactive Elements -->
+            <div class="float-bubble bubble-speech-1" data-speed="1.2">
+              <span class="bubble-icon">💬</span>
+              <div class="bubble-content">
+                <strong>Hello! How are you?</strong>
+                <span>Speaking Club practice</span>
+              </div>
+            </div>
+
+            <div class="float-bubble bubble-ielts" data-speed="0.8">
+              <span class="bubble-icon">🎓</span>
+              <div class="bubble-content">
+                <strong class="text-gold">IELTS 7.5 – 8.0</strong>
+                <span>IDP Partner Centre</span>
+              </div>
+            </div>
+
+            <div class="float-letter letter-a" data-speed="1.5">A</div>
+            <div class="float-letter letter-b" data-speed="1.1">B</div>
+            <div class="float-letter letter-c" data-speed="1.7">C</div>
+
+            <div class="float-badge badge-coin" data-speed="1.4">
+              <span class="coin-symbol">🪙</span>
+              <span>OneEnglishCoin</span>
+            </div>
+
+            <div class="float-badge badge-plane" data-speed="0.9">
+              <span>✈️ Malaysia Camp</span>
+            </div>
+
+            <div class="float-badge badge-book" data-speed="1.3">
+              <span>📚 Starter → Advanced</span>
+            </div>
+
+            <!-- SVG Background Rings -->
+            <svg class="hero-rings-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="220" stroke="#FFB703" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.4"/>
+              <circle cx="250" cy="250" r="160" stroke="#F7F9FC" stroke-width="1.5" stroke-opacity="0.2"/>
+              <circle cx="250" cy="250" r="100" stroke="#FFB703" stroke-width="2" stroke-opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Stats Bar (Counter Animations) -->
+      <div class="hero-stats-bar">
+        <div class="container stats-container">
+          <div class="stat-card" data-counter-target="2020" data-counter-prefix="" data-counter-suffix="">
+            <div class="stat-number">
+              <span class="counter-value">0</span>
+            </div>
+            <div class="stat-label">Год основания школы</div>
+            <div class="stat-sub">Опыт и проверенные результаты</div>
+          </div>
+
+          <div class="stat-card" data-counter-target="2" data-counter-prefix="" data-counter-suffix="">
+            <div class="stat-number">
+              <span class="counter-value">0</span>
+            </div>
+            <div class="stat-label">Современных филиала</div>
+            <div class="stat-sub">SEVER и YANGI SHAHAR в Шымкенте</div>
+          </div>
+
+          <div class="stat-card" data-counter-target="15" data-counter-prefix="" data-counter-suffix="+">
+            <div class="stat-number">
+              <span class="counter-value">0</span><span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">Преподавателей</div>
+            <div class="stat-sub">Сертифицированные эксперты</div>
+          </div>
+
+          <div class="stat-card" data-counter-target="100" data-counter-prefix="" data-counter-suffix="%">
+            <div class="stat-number">
+              <span class="counter-value">0</span><span class="stat-plus">%</span>
+            </div>
+            <div class="stat-label">Все возрасты и уровни</div>
+            <div class="stat-sub">От Starter до Advanced и грантов</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         2. НАПРАВЛЕНИЯ ОБУЧЕНИЯ (Light Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-light" id="programs">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Программы</span>
+          <h2 class="section-title">Направления обучения</h2>
+          <p class="section-desc">
+            Эффективные программы для любого возраста и образовательных целей. Подберите подходящий формат для уверенного старта и устойчивого прогресса.
+          </p>
+        </div>
+
+        <div class="programs-grid">
+          <!-- 1. Starter to Advanced -->
+          <article class="program-card card-interactive reveal-fade-up">
+            <div class="card-icon-badge">
+              <span class="flag-icon">🇬🇧</span>
+            </div>
+            <h3 class="card-title">Английский язык — от Starter до Advanced</h3>
+            <p class="card-text">
+              Комплексное освоение грамматики, расширение словарного запаса и развитие разговорных навыков с системным переходом на новый уровень.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">7 ступеней обучения</span>
+              <a href="#contacts" class="card-link" aria-label="Записаться на курс Английский от Starter до Advanced">Записаться →</a>
+            </div>
+          </article>
+
+          <!-- 2. IELTS -->
+          <article class="program-card card-interactive card-featured reveal-fade-up" data-delay="100">
+            <div class="card-icon-badge badge-gold">
+              <span>🎓</span>
+            </div>
+            <div class="featured-ribbon">Топ результат</div>
+            <h3 class="card-title">IELTS подготовка</h3>
+            <p class="card-text">
+              Интенсивная подготовка ко всем 4 секциям экзамена (Listening, Reading, Writing, Speaking) с преподавателями с баллами IELTS 7.5–8.0.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">IDP Partner</span>
+              <a href="#ielts" class="card-link" aria-label="Подробнее об IELTS">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 3. Speaking Club -->
+          <article class="program-card card-interactive reveal-fade-up" data-delay="200">
+            <div class="card-icon-badge">
+              <span>🗣</span>
+            </div>
+            <h3 class="card-title">Speaking Club</h3>
+            <p class="card-text">
+              Регулярная разговорная практика на актуальные темы, снятие языкового барьера и обретение уверенности в беглом выражении мыслей.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Живое общение</span>
+              <a href="#speaking" class="card-link" aria-label="Подробнее о Speaking Club">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 4. Для детей -->
+          <article class="program-card card-interactive reveal-fade-up">
+            <div class="card-icon-badge">
+              <span>👧</span>
+            </div>
+            <h3 class="card-title">Английский для детей</h3>
+            <p class="card-text">
+              Бережное и увлекательное погружение в язык через интерактивные игровые методики, формирующие естественную любовь к английскому.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Игровая методика</span>
+              <a href="#contacts" class="card-link" aria-label="Записаться на курс для детей">Записаться →</a>
+            </div>
+          </article>
+
+          <!-- 5. Для школьников -->
+          <article class="program-card card-interactive reveal-fade-up" data-delay="100">
+            <div class="card-icon-badge">
+              <span>👦</span>
+            </div>
+            <h3 class="card-title">Английский для школьников</h3>
+            <p class="card-text">
+              Устранение пробелов, опережение школьной программы и формирование прочной базы для будущих экзаменов и свободного владения языком.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Успеваемость и база</span>
+              <a href="#contacts" class="card-link" aria-label="Записаться на курс для школьников">Записаться →</a>
+            </div>
+          </article>
+
+          <!-- 6. Для подростков -->
+          <article class="program-card card-interactive reveal-fade-up" data-delay="200">
+            <div class="card-icon-badge">
+              <span>👩‍🎓</span>
+            </div>
+            <h3 class="card-title">Английский для подростков</h3>
+            <p class="card-text">
+              Динамичные уроки с обсуждением современных тем, развитием критического мышления и целенаправленной подготовкой к олимпиадам и тестам.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Развитие навыков</span>
+              <a href="#contacts" class="card-link" aria-label="Записаться на курс для подростков">Записаться →</a>
+            </div>
+          </article>
+
+          <!-- 7. Для взрослых -->
+          <article class="program-card card-interactive reveal-fade-up">
+            <div class="card-icon-badge">
+              <span>👨‍💼</span>
+            </div>
+            <h3 class="card-title">Английский для взрослых</h3>
+            <p class="card-text">
+              Практический английский для карьерного роста, деловых переговоров, уверенных путешествий и комфортной коммуникации с иностранцами.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Практика и карьера</span>
+              <a href="#contacts" class="card-link" aria-label="Записаться на курс для взрослых">Записаться →</a>
+            </div>
+          </article>
+
+          <!-- 8. Обучение за рубежом -->
+          <article class="program-card card-interactive reveal-fade-up" data-delay="100">
+            <div class="card-icon-badge">
+              <span>🌍</span>
+            </div>
+            <h3 class="card-title">Подготовка к обучению за рубежом</h3>
+            <p class="card-text">
+              Освоение академического английского, развитие навыков написания эссе и успешной адаптации к обучению в зарубежных учебных заведениях.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Академический уровень</span>
+              <a href="#abroad" class="card-link" aria-label="Подробнее об обучении за рубежом">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 9. Поступление и гранты -->
+          <article class="program-card card-interactive reveal-fade-up" data-delay="200">
+            <div class="card-icon-badge">
+              <span>🎓</span>
+            </div>
+            <h3 class="card-title">Помощь с поступлением и грантами</h3>
+            <p class="card-text">
+              Экспертное консультирование по сбору документов, мотивационным письмам и поиску стипендиальных программ в престижных университетах мира.
+            </p>
+            <div class="card-footer">
+              <span class="card-pill">Стипендии и гранты</span>
+              <a href="#abroad" class="card-link" aria-label="Подробнее о помощи с поступлением">Подробнее →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. УРОВНИ ОБУЧЕНИЯ (Интерактивная лестница / Таймлайн)
+         ========================================================================= -->
+    <section class="section section-levels" id="levels">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag section-tag-light">Шкала CEFR</span>
+          <h2 class="section-title text-white">Уровни владения языком</h2>
+          <p class="section-desc text-white-muted">
+            Понятная траектория от первых фраз до беглого владения. Нажмите на любой уровень, чтобы узнать подробности и цели программы.
+          </p>
+        </div>
+
+        <div class="levels-interactive-wrap">
+          <!-- 7-Step Horizontal/Vertical Ladder Navigation -->
+          <div class="levels-ladder" id="levelsLadder" role="tablist" aria-label="Выбор уровня английского языка">
+            <button class="ladder-step active" data-level="1" role="tab" aria-selected="true" aria-controls="levelDetail">
+              <span class="step-num">1</span>
+              <span class="step-name">Starter</span>
+              <span class="step-cefr">Pre-A1</span>
+            </button>
+
+            <button class="ladder-step" data-level="2" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">2</span>
+              <span class="step-name">Beginner</span>
+              <span class="step-cefr">A1</span>
+            </button>
+
+            <button class="ladder-step" data-level="3" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">3</span>
+              <span class="step-name">Elementary</span>
+              <span class="step-cefr">A2</span>
+            </button>
+
+            <button class="ladder-step" data-level="4" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">4</span>
+              <span class="step-name">Pre-Intermediate</span>
+              <span class="step-cefr">B1</span>
+            </button>
+
+            <button class="ladder-step" data-level="5" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">5</span>
+              <span class="step-name">Intermediate</span>
+              <span class="step-cefr">B1+</span>
+            </button>
+
+            <button class="ladder-step" data-level="6" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">6</span>
+              <span class="step-name">Upper-Intermediate</span>
+              <span class="step-cefr">B2</span>
+            </button>
+
+            <button class="ladder-step" data-level="7" role="tab" aria-selected="false" aria-controls="levelDetail">
+              <span class="step-num">7</span>
+              <span class="step-name">Advanced</span>
+              <span class="step-cefr">C1</span>
+            </button>
+          </div>
+
+          <!-- Animated Progress Line Tracker -->
+          <div class="ladder-progress-track" aria-hidden="true">
+            <div class="ladder-progress-fill" id="ladderProgressFill" style="width: 14.28%;"></div>
+          </div>
+
+          <!-- Dynamic Active Level Information Box -->
+          <div class="level-detail-card" id="levelDetail" role="tabpanel">
+            <div class="detail-header">
+              <div class="detail-badge-group">
+                <span class="detail-level-tag" id="levelTag">Уровень 1</span>
+                <span class="detail-cefr-tag" id="levelCefr">Pre-A1</span>
+              </div>
+              <h3 class="detail-title" id="levelTitle">Starter</h3>
+            </div>
+            <p class="detail-desc" id="levelDesc">
+              Идеальный старт для тех, кто никогда ранее не учил английский язык. Изучение алфавита, правил чтения, базовых звуков и построения первых простых фраз для повседневных диалогов.
+            </p>
+            <div class="detail-outcomes-grid">
+              <div class="outcome-item">
+                <span class="outcome-icon">🎯</span>
+                <div>
+                  <strong>Главная цель</strong>
+                  <p id="levelGoal">Поставить правильное произношение и преодолеть страх первого слова</p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="outcome-icon">🗣</span>
+                <div>
+                  <strong>Разговорная речь</strong>
+                  <p id="levelSpeaking">Знакомство, простые ответы о себе, семье и увлечениях</p>
+                </div>
+              </div>
+              <div class="outcome-item">
+                <span class="outcome-icon">📖</span>
+                <div>
+                  <strong>Словарный запас</strong>
+                  <p id="levelVocab">До 500 базовых слов и выражений</p>
+                </div>
+              </div>
+            </div>
+            <div class="detail-action">
+              <a href="#contacts" class="btn btn-accent">Определить свой уровень на пробном уроке</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. ФОРМАТ ОБУЧЕНИЯ (Light Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-light" id="format">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Стандарты One English</span>
+          <h2 class="section-title">Формат обучения</h2>
+          <p class="section-desc">
+            Продуманная структура учебного процесса для высокой концентрации, устойчивой мотивации и максимального результата каждого студента.
+          </p>
+        </div>
+
+        <div class="format-cards-grid">
+          <!-- Card 1 -->
+          <div class="format-card reveal-fade-up">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                <path d="M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">10–15</div>
+            <h3 class="format-title">Группы: 10–15 человек</h3>
+            <p class="format-text">
+              Оптимальное количество учеников для живой интерактивной командной работы и персонального внимания преподавателя к каждому.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="format-card reveal-fade-up" data-delay="100">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">3x</div>
+            <h3 class="format-title">Занятия: 3 раза в неделю</h3>
+            <p class="format-text">
+              Сбалансированное расписание с равномерным распределением нагрузки, позволяющее эффективно усваивать материал без переутомления.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="format-card reveal-fade-up" data-delay="200">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">01</div>
+            <h3 class="format-title">Системное обучение по уровням</h3>
+            <p class="format-text">
+              Четкая модульная программа без хаоса и пропусков: логичный переход от простого к сложному по международным стандартам.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="format-card reveal-fade-up">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">02</div>
+            <h3 class="format-title">Контроль прогресса</h3>
+            <p class="format-text">
+              Регулярные срезы знаний и промежуточные тесты после каждой темы, наглядно демонстрирующие динамику роста ученика.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="format-card reveal-fade-up" data-delay="100">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">03</div>
+            <h3 class="format-title">Домашние задания</h3>
+            <p class="format-text">
+              Практические задания на закрепление пройденной лексики и грамматики с обязательной быстрой проверкой и разбором ошибок.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="format-card reveal-fade-up" data-delay="200">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">04</div>
+            <h3 class="format-title">Практика Speaking</h3>
+            <p class="format-text">
+              Разговорная практика на каждом занятии: студенты формулируют мысли и ведут дискуссии на английском с первых минут урока.
+            </p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="format-card reveal-fade-up" data-delay="300">
+            <div class="format-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <div class="format-badge-number">05</div>
+            <h3 class="format-title">Обратная связь ученику / родителям</h3>
+            <p class="format-text">
+              Регулярные персональные отчеты о достижениях, посещаемости, активности на занятиях и четкие рекомендации наставника.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. IELTS ПОДГОТОВКА (Dark Deep Blue #0F2A6B with Gold Accents)
+         ========================================================================= -->
+    <section class="section section-ielts" id="ielts">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="ielts-partner-pill">
+            <span class="idp-badge">IDP IELTS Centre</span>
+            <span>Официальное сотрудничество</span>
+          </div>
+          <h2 class="section-title text-white">IELTS подготовка</h2>
+          <p class="section-desc text-white-muted ielts-lead-text">
+            В One English работают преподаватели IELTS с высокими результатами, в том числе IELTS 7.5–8.0. Также у школы есть сотрудничество с IDP IELTS Centre.
+          </p>
+        </div>
+
+        <div class="ielts-content-grid">
+          <!-- Interactive Band Score Meter -->
+          <div class="ielts-meter-card reveal-fade-up">
+            <div class="meter-head">
+              <div>
+                <span class="meter-sub">Целевой диапазон</span>
+                <h3 class="meter-title">Band Score 7.5 – 8.0</h3>
+              </div>
+              <div class="meter-badge-glow">Экспертный уровень</div>
+            </div>
+
+            <div class="ielts-band-scale" id="ieltsScale">
+              <div class="scale-track">
+                <div class="scale-fill" id="ieltsScaleFill" style="width: 88%;">
+                  <span class="scale-pin">
+                    <span class="pin-value">8.0</span>
+                  </span>
+                </div>
+              </div>
+              <div class="scale-marks">
+                <span>0.0</span>
+                <span>4.0</span>
+                <span>5.5</span>
+                <span>6.5</span>
+                <span class="mark-highlight">7.5</span>
+                <span class="mark-highlight">8.0</span>
+                <span>9.0</span>
+              </div>
+            </div>
+
+            <div class="meter-description">
+              <p>
+                Балл 7.5–8.0 открывает двери в ведущие университеты мира и стипендиальные программы. Наши наставники сами сдали экзамен на высший балл и знают тонкости оценивания каждого критерия.
+              </p>
+            </div>
+
+            <div class="meter-cta">
+              <a href="#contacts" class="btn btn-accent btn-full">Записаться на пробный IELTS тест</a>
+            </div>
+          </div>
+
+          <!-- 4 Modules Cards -->
+          <div class="ielts-modules-grid">
+            <div class="ielts-module-card reveal-fade-up" data-delay="100">
+              <div class="module-header">
+                <span class="module-icon">🎧</span>
+                <span class="module-band">Target 8.0+</span>
+              </div>
+              <h4 class="module-title">Listening</h4>
+              <p class="module-text">
+                Разбор всех типов заданий, восприятие британского, австралийского и американского акцентов, тактики работы со временем и прогнозирование ответов.
+              </p>
+            </div>
+
+            <div class="ielts-module-card reveal-fade-up" data-delay="150">
+              <div class="module-header">
+                <span class="module-icon">📖</span>
+                <span class="module-band">Target 8.0+</span>
+              </div>
+              <h4 class="module-title">Reading</h4>
+              <p class="module-text">
+                Техники Skimming & Scanning, быстрое ориентирование в академических текстах, безошибочный анализ вопросов True/False/Not Given и Headings.
+              </p>
+            </div>
+
+            <div class="ielts-module-card reveal-fade-up" data-delay="200">
+              <div class="module-header">
+                <span class="module-icon">✍️</span>
+                <span class="module-band">Target 7.5+</span>
+              </div>
+              <h4 class="module-title">Writing (Task 1 & 2)</h4>
+              <p class="module-text">
+                Четкие шаблоны описания графиков, карт и процессов, логичная структура академических эссе, расширенная лексика и безошибочная когезия.
+              </p>
+            </div>
+
+            <div class="ielts-module-card reveal-fade-up" data-delay="250">
+              <div class="module-header">
+                <span class="module-icon">🗣</span>
+                <span class="module-band">Target 8.0+</span>
+              </div>
+              <h4 class="module-title">Speaking</h4>
+              <p class="module-text">
+                Тренировка беглости без запинок, идиоматические выражения, уверенные ответы на Part 2 & 3, регулярные симуляции реального экзамена.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. ONE ENGLISH COINS 🪙 (Showstopper Feature Section)
+         ========================================================================= -->
+    <section class="section section-coins" id="coins">
+      <div class="coins-bg-sparkles" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="coins-crown-badge">
+            <span>🪙 Система мотивации</span>
+          </div>
+          <h2 class="section-title">One English Coins</h2>
+          <p class="section-desc coins-intro-text">
+            За активность на занятиях ученики получают <strong class="text-gold">OneEnglishCoin</strong>. Монеты можно накапливать и обменивать на подарки.
+          </p>
+        </div>
+
+        <!-- 4 Steps Game Loop -->
+        <div class="coins-loop-wrap reveal-fade-up">
+          <div class="loop-step">
+            <div class="loop-icon-circle">📚</div>
+            <span class="loop-step-badge">Шаг 1</span>
+            <h4 class="loop-title">Учишься</h4>
+            <p class="loop-desc">Посещаешь занятия и вовремя делаешь ДЗ</p>
+          </div>
+
+          <div class="loop-arrow" aria-hidden="true">➔</div>
+
+          <div class="loop-step">
+            <div class="loop-icon-circle">⚡</div>
+            <span class="loop-step-badge">Шаг 2</span>
+            <h4 class="loop-title">Проявляешь активность</h4>
+            <p class="loop-desc">Отвечаешь у доски, участвуешь в дебатах</p>
+          </div>
+
+          <div class="loop-arrow" aria-hidden="true">➔</div>
+
+          <div class="loop-step highlight-step">
+            <div class="loop-icon-circle coin-glow">🪙</div>
+            <span class="loop-step-badge">Шаг 3</span>
+            <h4 class="loop-title">Получаешь Coins</h4>
+            <p class="loop-desc">Накапливаешь баланс на личный счёт</p>
+          </div>
+
+          <div class="loop-arrow" aria-hidden="true">➔</div>
+
+          <div class="loop-step">
+            <div class="loop-icon-circle">🎁</div>
+            <span class="loop-step-badge">Шаг 4</span>
+            <h4 class="loop-title">Выбираешь подарок</h4>
+            <p class="loop-desc">Обмениваешь на крутые призы школы</p>
+          </div>
+        </div>
+
+        <!-- Interactive Coin Showcase & Playground -->
+        <div class="coins-interactive-dashboard reveal-scale">
+          <div class="dashboard-left">
+            <!-- 3D Coin Canvas / CSS Coin -->
+            <div class="coin-3d-scene" id="coin3dScene" title="Нажмите, чтобы раскрутить монету!">
+              <div class="coin-3d-object" id="coin3dObject">
+                <div class="coin-face coin-front">
+                  <div class="coin-inner-ring">
+                    <span class="coin-face-number">1</span>
+                    <span class="coin-face-text">ONE COIN</span>
+                  </div>
+                </div>
+                <div class="coin-face coin-back">
+                  <div class="coin-inner-ring">
+                    <span class="coin-face-icon">⭐</span>
+                    <span class="coin-face-text">SHYMKENT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="coin-interactive-actions">
+              <button class="btn btn-accent btn-shine" id="earnCoinBtn">
+                <span>🪙 Заработать монету!</span>
+              </button>
+              <div class="coin-live-counter">
+                <span>Твой демо-баланс:</span>
+                <strong id="userDemoCoins">50</strong> <span class="text-gold">Coins</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-right">
+            <div class="gifts-catalog-head">
+              <h3 class="gifts-catalog-title">Подарки за OneEnglishCoin</h3>
+              <p class="gifts-catalog-desc">Накапливайте монеты за активность на уроках и обменивайте на подарки:</p>
+            </div>
+
+            <!-- 6 Gift Tiers -->
+            <div class="gift-tiers-grid" id="giftTiersGrid">
+              <div class="gift-tier-card" data-tier-cost="5">
+                <div class="gift-cost">5 🪙</div>
+                <div class="gift-box-icon">🎁</div>
+                <h4 class="gift-name">Подарок</h4>
+                <span class="gift-status status-unlocked">Доступно</span>
+              </div>
+
+              <div class="gift-tier-card" data-tier-cost="10">
+                <div class="gift-cost">10 🪙</div>
+                <div class="gift-box-icon">🎁</div>
+                <h4 class="gift-name">Подарок</h4>
+                <span class="gift-status status-unlocked">Доступно</span>
+              </div>
+
+              <div class="gift-tier-card" data-tier-cost="20">
+                <div class="gift-cost">20 🪙</div>
+                <div class="gift-box-icon">🎁</div>
+                <h4 class="gift-name">Подарок</h4>
+                <span class="gift-status status-unlocked">Доступно</span>
+              </div>
+
+              <div class="gift-tier-card" data-tier-cost="50">
+                <div class="gift-cost">50 🪙</div>
+                <div class="gift-box-icon">🎁</div>
+                <h4 class="gift-name">Подарок</h4>
+                <span class="gift-status status-unlocked">Доступно</span>
+              </div>
+
+              <div class="gift-tier-card" data-tier-cost="100">
+                <div class="gift-cost">100 🪙</div>
+                <div class="gift-box-icon">🎁</div>
+                <h4 class="gift-name">Подарок</h4>
+                <span class="gift-status status-locked">Нужно больше</span>
+              </div>
+
+              <div class="gift-tier-card gift-tier-legendary" data-tier-cost="1000">
+                <div class="gift-cost">1000 🪙</div>
+                <div class="gift-box-icon">👑</div>
+                <h4 class="gift-name">Супер-подарок</h4>
+                <span class="gift-status status-locked">Нужно больше</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. SPEAKING CLUB 🗣 (Light Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-light" id="speaking">
+      <div class="container">
+        <div class="speaking-split-layout">
+          <div class="speaking-text-side">
+            <span class="section-tag">Живая речь</span>
+            <h2 class="section-title">Speaking Club 🗣</h2>
+            <p class="section-desc">
+              Дополнительная практика разговорного английского в непринужденной дружеской атмосфере. Здесь студенты учатся свободно выражать мысли и мыслить на языке.
+            </p>
+
+            <ul class="speaking-features-list">
+              <li class="speaking-feat-item reveal-fade-up">
+                <span class="feat-check">✓</span>
+                <div>
+                  <strong>Разговорная практика</strong>
+                  <p>Регулярные дискуссии, диалоги и презентации на английском без скучных монологов.</p>
+                </div>
+              </li>
+              <li class="speaking-feat-item reveal-fade-up" data-delay="100">
+                <span class="feat-check">✓</span>
+                <div>
+                  <strong>Новые темы каждую неделю</strong>
+                  <p>Кино, технологии, путешествия, искусство, глобальные новости и студенческая жизнь.</p>
+                </div>
+              </li>
+              <li class="speaking-feat-item reveal-fade-up" data-delay="200">
+                <span class="feat-check">✓</span>
+                <div>
+                  <strong>Работа над словарным запасом</strong>
+                  <p>Внедрение современной разговорной лексики, сленга и полезных фразовых глаголов.</p>
+                </div>
+              </li>
+              <li class="speaking-feat-item reveal-fade-up" data-delay="300">
+                <span class="feat-check">✓</span>
+                <div>
+                  <strong>Снятие языкового барьера</strong>
+                  <p>Преодоление стеснения и страха сделать грамматическую ошибку при посторонних.</p>
+                </div>
+              </li>
+              <li class="speaking-feat-item reveal-fade-up" data-delay="400">
+                <span class="feat-check">✓</span>
+                <div>
+                  <strong>Развитие уверенности в общении</strong>
+                  <p>Формирование естественной интонации и легкого восприятия беглой речи на слух.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="speaking-cta-action reveal-fade-up" data-delay="500">
+              <a href="#contacts" class="btn btn-primary">Прийти на Speaking Club</a>
+            </div>
+          </div>
+
+          <!-- Animated Chat Simulation -->
+          <div class="speaking-chat-side reveal-scale">
+            <div class="chat-mockup-window">
+              <div class="chat-header">
+                <div class="chat-status-dot"></div>
+                <div class="chat-header-info">
+                  <strong>One English · Speaking Club</strong>
+                  <span>Live conversation session</span>
+                </div>
+                <span class="chat-lang-tag">EN ONLY 🇬🇧</span>
+              </div>
+
+              <div class="chat-messages-body" id="chatMessagesBody">
+                <div class="chat-message msg-left reveal-fade-up" data-delay="100">
+                  <div class="msg-avatar">👩</div>
+                  <div class="msg-bubble">
+                    <span class="msg-author">Teacher Aigerim</span>
+                    <p>Welcome everyone! Today’s topic is "Studying abroad & travel dreams". Who wants to share first?</p>
+                  </div>
+                </div>
+
+                <div class="chat-message msg-right reveal-fade-up" data-delay="300">
+                  <div class="msg-bubble msg-bubble-accent">
+                    <span class="msg-author">Student Dauren</span>
+                    <p>I’m preparing for IELTS! I used to be afraid to speak, but now I feel so much more confident! 🚀</p>
+                  </div>
+                  <div class="msg-avatar">👦</div>
+                </div>
+
+                <div class="chat-message msg-left reveal-fade-up" data-delay="500">
+                  <div class="msg-avatar">👧</div>
+                  <div class="msg-bubble">
+                    <span class="msg-author">Student Madina</span>
+                    <p>Great job! I also love our debates. We learned so many cool idioms today! 🌟</p>
+                  </div>
+                </div>
+
+                <div class="chat-typing-indicator" id="chatTypingIndicator">
+                  <span></span><span></span><span></span>
+                  <span class="typing-text">Speaking Club is in progress...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. ЛЕТНИЙ ЛАГЕРЬ 🌴 (Summer Camp in Malaysia)
+         ========================================================================= -->
+    <section class="section section-camp" id="camp">
+      <!-- Animated Flying Airplane Across Screen -->
+      <div class="airplane-flight-track" aria-hidden="true">
+        <div class="flying-airplane" id="flyingAirplane">
+          <span>✈️</span>
+          <span class="vapor-trail"></span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="camp-card-glass reveal-scale">
+          <div class="camp-header-grid">
+            <div class="camp-text-content">
+              <div class="camp-badge">
+                <span>🌴 Международный опыт</span>
+              </div>
+              <h2 class="section-title text-white">Летний лагерь One English</h2>
+              <p class="camp-highlight-lead">
+                One English организует летние программы, включая поездки в Малайзию, где дети могут совмещать отдых, английский и международный опыт.
+              </p>
+
+              <div class="camp-perks-grid">
+                <div class="camp-perk">
+                  <span class="perk-icon">🇲🇾</span>
+                  <div>
+                    <strong>Поездка в Малайзию</strong>
+                    <p>Путешествие в тропическую страну с богатой культурой и безопасной средой.</p>
+                  </div>
+                </div>
+
+                <div class="camp-perk">
+                  <span class="perk-icon">☀️</span>
+                  <div>
+                    <strong>Отдых и экскурсии</strong>
+                    <p>Насыщенная программа приключений, пляжный отдых и новые впечатления.</p>
+                  </div>
+                </div>
+
+                <div class="camp-perk">
+                  <span class="perk-icon">🗣</span>
+                  <div>
+                    <strong>Английский каждый день</strong>
+                    <p>Естественная языковая среда и общение с преподавателями и сверстниками.</p>
+                  </div>
+                </div>
+
+                <div class="camp-perk">
+                  <span class="perk-icon">🛡</span>
+                  <div>
+                    <strong>Безопасность и забота</strong>
+                    <p>Круглосуточное сопровождение опытных наставников школы One English.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="camp-action-row">
+                <a href="#contacts" class="btn btn-accent btn-lg btn-shine">Узнать о летней программе</a>
+              </div>
+            </div>
+
+            <!-- SVG Illustration of Palm and Sun -->
+            <div class="camp-visual-side">
+              <div class="camp-illustration-wrap">
+                <svg viewBox="0 0 320 320" class="camp-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Golden Sun -->
+                  <circle cx="230" cy="80" r="45" fill="#FFB703" opacity="0.9"/>
+                  <!-- Sun rays -->
+                  <path d="M230 20V5M230 155V140M170 80H155M305 80H290M188 38L176 26M284 134L272 122M188 122L176 134M284 26L272 38" stroke="#FFB703" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Island mound -->
+                  <path d="M40 280C90 240 230 240 280 280H40Z" fill="#FFB703" opacity="0.3"/>
+                  <!-- Palm trunk -->
+                  <path d="M120 270C130 210 155 160 185 130" stroke="#FFB703" stroke-width="12" stroke-linecap="round"/>
+                  <!-- Palm leaves -->
+                  <path d="M185 130C150 110 110 120 90 140" stroke="#F7F9FC" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M185 130C170 90 150 70 120 70" stroke="#F7F9FC" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M185 130C210 90 240 85 270 95" stroke="#F7F9FC" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M185 130C220 120 250 140 265 170" stroke="#F7F9FC" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+                <div class="camp-country-chip">
+                  <span>✈️ Destination: Malaysia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated SVG Waves at Bottom -->
+      <div class="camp-waves-divider" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#F7F9FC"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. ОБУЧЕНИЕ ЗА РУБЕЖОМ 🌍 (Light Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-light" id="abroad">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Международные горизонты</span>
+          <h2 class="section-title">Обучение за рубежом</h2>
+          <p class="section-desc">
+            Школа One English помогает студентам уверенно поступить в зарубежные университеты и колледжи. Комплексное сопровождение на каждом этапе:
+          </p>
+        </div>
+
+        <div class="abroad-layout-grid">
+          <!-- 5 Steps Vertical Timeline -->
+          <div class="abroad-steps-timeline">
+            <!-- Step 1 -->
+            <div class="abroad-step-item reveal-fade-up">
+              <div class="step-marker">
+                <span class="marker-circle">1</span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <div class="step-header-tag">Этап 01</div>
+                <h3 class="step-heading">Подобрать направление обучения</h3>
+                <p class="step-description">
+                  Индивидуальный анализ способностей, интересов и целей студента. Подбор актуальных стран, вузов и востребованных специальностей.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="abroad-step-item reveal-fade-up" data-delay="100">
+              <div class="step-marker">
+                <span class="marker-circle">2</span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <div class="step-header-tag">Этап 02</div>
+                <h3 class="step-heading">Подготовиться к поступлению</h3>
+                <p class="step-description">
+                  Разработка пошагового плана академической подготовки, устранение пробелов в знаниях и формирование сильного студенческого профиля.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="abroad-step-item reveal-fade-up" data-delay="200">
+              <div class="step-marker">
+                <span class="marker-circle">3</span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <div class="step-header-tag">Этап 03</div>
+                <h3 class="step-heading">Подготовить документы</h3>
+                <p class="step-description">
+                  Помощь в грамотном составлении резюме (CV), убедительных мотивационных писем, рекомендаций и полного пакета для приемной комиссии.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="abroad-step-item reveal-fade-up" data-delay="300">
+              <div class="step-marker">
+                <span class="marker-circle">4</span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <div class="step-header-tag">Этап 04</div>
+                <h3 class="step-heading">Искать возможности обучения по грантам</h3>
+                <p class="step-description">
+                  Поиск и подача заявок на стипендии, полные и частичные гранты, снижающие финансовую нагрузку на обучение за границей.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="abroad-step-item reveal-fade-up" data-delay="400">
+              <div class="step-marker">
+                <span class="marker-circle">5</span>
+              </div>
+              <div class="step-card highlight-card">
+                <div class="step-header-tag text-gold">Этап 05</div>
+                <h3 class="step-heading">Подготовиться к IELTS</h3>
+                <p class="step-description">
+                  Достижение необходимого балла (6.5 – 8.0) для подтверждения языка и успешного зачисления без дополнительных языковых курсов.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotating 3D Globe Visual Column -->
+          <div class="abroad-visual-column">
+            <div class="globe-sticky-box reveal-scale">
+              <div class="globe-sphere-wrap" id="globeWrap">
+                <svg class="globe-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Outer sphere -->
+                  <circle cx="150" cy="150" r="130" stroke="#0F2A6B" stroke-width="4" stroke-opacity="0.2"/>
+                  <circle cx="150" cy="150" r="130" fill="#0F2A6B" fill-opacity="0.04"/>
+                  <!-- Latitude lines -->
+                  <ellipse cx="150" cy="150" rx="130" ry="40" stroke="#0F2A6B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3"/>
+                  <ellipse cx="150" cy="150" rx="130" ry="85" stroke="#0F2A6B" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3"/>
+                  <!-- Longitude line -->
+                  <ellipse cx="150" cy="150" rx="60" ry="130" stroke="#FFB703" stroke-width="2.5" opacity="0.8"/>
+                  <line x1="20" y1="150" x2="280" y2="150" stroke="#0F2A6B" stroke-width="2" opacity="0.3"/>
+                  <!-- Center Compass/Target -->
+                  <circle cx="150" cy="150" r="12" fill="#FFB703"/>
+                  <circle cx="150" cy="150" r="24" stroke="#FFB703" stroke-width="2" stroke-opacity="0.4" class="pulse-ring"/>
+                </svg>
+              </div>
+
+              <div class="globe-meta-box">
+                <h4 class="meta-title">Твой путь к международному диплому</h4>
+                <p class="meta-desc">От первого тестирования до посадки на самолёт — мы рядом с вами.</p>
+                <a href="#contacts" class="btn btn-accent btn-full">Консультация по поступлению</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. О ШКОЛЕ (Dark Section #0F2A6B)
+         ========================================================================= -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="about-hero-grid">
+          <div class="about-text-content reveal-fade-up">
+            <span class="section-tag section-tag-light">История и ценности</span>
+            <h2 class="section-title text-white">О школе One English</h2>
+            <p class="about-lead text-white-muted">
+              One English — динамично развивающаяся языковая школа в Шымкенте. Мы создаем вдохновляющую среду, где каждый студент раскрывает свой потенциал, перестает бояться английского и добивается поставленных академических и жизненных целей.
+            </p>
+
+            <div class="about-bullets">
+              <div class="bullet-row">
+                <span class="bullet-dot"></span>
+                <span><strong>Работаем с 2020 года</strong> — стабильное качество преподавания и проверенная методология.</span>
+              </div>
+              <div class="bullet-row">
+                <span class="bullet-dot"></span>
+                <span><strong>2 удобных филиала в Шымкенте</strong> — оснащенные аудитории в разных районах города.</span>
+              </div>
+              <div class="bullet-row">
+                <span class="bullet-dot"></span>
+                <span><strong>Более 15 преподавателей</strong> — профессиональная команда с высоким знанием языка.</span>
+              </div>
+              <div class="bullet-row">
+                <span class="bullet-dot"></span>
+                <span><strong>Курсы для разных возрастов и уровней</strong> — от дошкольников до топ-менеджеров.</span>
+              </div>
+            </div>
+
+            <div class="about-action">
+              <a href="#contacts" class="btn btn-accent btn-lg">Записаться на экскурсию и тестирование</a>
+            </div>
+          </div>
+
+          <!-- Numbers / Stats Big Cards Grid -->
+          <div class="about-stats-grid">
+            <div class="about-stat-box reveal-scale">
+              <span class="box-stat-number" data-count="2020">2020</span>
+              <span class="box-stat-title">Год открытия</span>
+              <p class="box-stat-desc">Основание школы в Шымкенте</p>
+            </div>
+
+            <div class="about-stat-box reveal-scale" data-delay="100">
+              <span class="box-stat-number" data-count="2">2</span>
+              <span class="box-stat-title">Филиала</span>
+              <p class="box-stat-desc">SEVER и YANGI SHAHAR</p>
+            </div>
+
+            <div class="about-stat-box reveal-scale" data-delay="200">
+              <span class="box-stat-number" data-count="15">15+</span>
+              <span class="box-stat-title">Преподавателей</span>
+              <p class="box-stat-desc">В штате учебного центра</p>
+            </div>
+
+            <div class="about-stat-box reveal-scale" data-delay="300">
+              <span class="box-stat-number">A1–C1</span>
+              <span class="box-stat-title">Все уровни</span>
+              <p class="box-stat-desc">Полная линейка программ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. FAQ — ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (Light Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-light" id="faq">
+      <div class="container max-w-reading">
+        <div class="section-header text-center">
+          <span class="section-tag">Ответы на вопросы</span>
+          <h2 class="section-title">Часто задаваемые вопросы</h2>
+          <p class="section-desc">
+            Вся основная информация о занятиях, формате, филиалах и подготовке в одном месте.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- Item 1 -->
+          <div class="faq-item reveal-fade-up">
+            <button class="faq-question" aria-expanded="false">
+              <span>Каков размер групп и сколько раз в неделю проходят занятия?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  Занятия в One English проходят <strong>3 раза в неделю</strong>. Мы формируем группы по <strong>10–15 человек</strong>, что позволяет сохранять динамику группового общения и уделять персональное внимание каждому студенту.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item reveal-fade-up" data-delay="100">
+            <button class="faq-question" aria-expanded="false">
+              <span>Для каких возрастов и уровней подходят курсы?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  В школе предусмотрены программы для всех категорий: <strong>дети, школьники, подростки и взрослые</strong>. Обучение ведется по 7 международным ступеням — от нулевого уровня <strong>Starter</strong> до профессионального <strong>Advanced</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item reveal-fade-up" data-delay="200">
+            <button class="faq-question" aria-expanded="false">
+              <span>Как проходит подготовка к IELTS в One English?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  В One English работают преподаватели IELTS с высокими результатами, в том числе <strong>IELTS 7.5–8.0</strong>. Также у нашей школы есть <strong>сотрудничество с IDP IELTS Centre</strong>. Программа охватывает все 4 блока: Listening, Reading, Writing и Speaking с разбором реальных экзаменационных тестов.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item reveal-fade-up" data-delay="300">
+            <button class="faq-question" aria-expanded="false">
+              <span>Что такое OneEnglishCoin и как их использовать?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  Это внутренняя система поощрения: за активность на уроках, выполнение заданий и старание ученики получают <strong>OneEnglishCoin</strong>. Монеты можно накапливать (уровни 5, 10, 20, 50, 100, 1000 Coins) и обменивать на ценные фирменные подарки.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item reveal-fade-up" data-delay="400">
+            <button class="faq-question" aria-expanded="false">
+              <span>Проводятся ли поездки за рубеж и летние лагеря?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  Да, One English организует летние программы, включая <strong>поездки в Малайзию</strong>, где дети могут совмещать яркий отдых, постоянную практику английского языка и получение ценного международного опыта в безопасной обстановке.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item reveal-fade-up" data-delay="500">
+            <button class="faq-question" aria-expanded="false">
+              <span>Где находятся филиалы школы и как к вам добраться?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  У школы 2 филиала в Шымкенте:<br>
+                  • <strong>Филиал SEVER:</strong> ул. Рыскулова, 72/8, 4 этаж.<br>
+                  • <strong>Филиал YANGI SHAHAR:</strong> Тамерлановское шоссе, 3/4, 2 этаж.<br>
+                  Ниже на странице вы можете проложить маршрут в 2GIS / Google Maps.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         12. КОНТАКТЫ И ЗАПИСЬ (Light / Cards Section #F7F9FC)
+         ========================================================================= -->
+    <section class="section section-contacts" id="contacts">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Свяжитесь с нами</span>
+          <h2 class="section-title">Филиалы и запись на пробный урок</h2>
+          <p class="section-desc">
+            Оставьте заявку на бесплатное тестирование уровня или приезжайте в любой из двух филиалов в Шымкенте.
+          </p>
+        </div>
+
+        <div class="contacts-grid">
+          <!-- Branches & Contact Details Card -->
+          <div class="branches-container reveal-fade-up">
+            <!-- Branch 1: SEVER -->
+            <div class="branch-card">
+              <div class="branch-header">
+                <div class="branch-title-wrap">
+                  <span class="branch-code">ФИЛИАЛ 01</span>
+                  <h3 class="branch-name">SEVER</h3>
+                </div>
+                <span class="branch-floor-badge">4 этаж</span>
+              </div>
+              <p class="branch-address">
+                📍 г. Шымкент, ул. Рыскулова, 72/8
+              </p>
+              <div class="branch-actions">
+                <a href="https://2gis.kz/shymkent/search/Рыскулова%2072%2F8" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>Открыть на карте (2GIS)</span>
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Branch 2: YANGI SHAHAR -->
+            <div class="branch-card">
+              <div class="branch-header">
+                <div class="branch-title-wrap">
+                  <span class="branch-code">ФИЛИАЛ 02</span>
+                  <h3 class="branch-name">YANGI SHAHAR</h3>
+                </div>
+                <span class="branch-floor-badge">2 этаж</span>
+              </div>
+              <p class="branch-address">
+                📍 г. Шымкент, Тамерлановское шоссе, 3/4
+              </p>
+              <div class="branch-actions">
+                <a href="https://2gis.kz/shymkent/search/Тамерлановское%20шоссе%203%2F4" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>Открыть на карте (2GIS)</span>
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Direct Quick Communication Cards -->
+            <div class="quick-contact-box">
+              <h4 class="quick-contact-title">Прямая связь:</h4>
+              <div class="contact-links-grid">
+                <a href="tel:+77473333536" class="contact-card-link">
+                  <span class="c-icon">📞</span>
+                  <div>
+                    <span class="c-label">Телефон / Приёмная</span>
+                    <strong class="c-val">+7 747 333 35 36</strong>
+                  </div>
+                </a>
+
+                <a href="tel:+77763333536" class="contact-card-link">
+                  <span class="c-icon">📞</span>
+                  <div>
+                    <span class="c-label">Телефон / Консультации</span>
+                    <strong class="c-val">+7 776 333 35 36</strong>
+                  </div>
+                </a>
+
+                <a href="https://wa.me/77473333536" target="_blank" rel="noopener noreferrer" class="contact-card-link link-highlight">
+                  <span class="c-icon">💬</span>
+                  <div>
+                    <span class="c-label">WhatsApp чат</span>
+                    <strong class="c-val">Написать в WhatsApp</strong>
+                  </div>
+                </a>
+
+                <a href="https://instagram.com/1eng.kz" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+                  <span class="c-icon">📷</span>
+                  <div>
+                    <span class="c-label">Instagram</span>
+                    <strong class="c-val">@1eng.kz</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Application Form Card -->
+          <div class="form-container-card reveal-fade-up" data-delay="150">
+            <div class="form-head">
+              <h3 class="form-title">Запись на пробный урок</h3>
+              <p class="form-sub">Заполните поля, и наш методист перезвонит для согласования времени тестирования.</p>
+            </div>
+
+            <form id="leadForm" class="lead-form" novalidate>
+              <div class="form-group">
+                <label for="userName" class="form-label">Ваше имя <span class="req">*</span></label>
+                <input type="text" id="userName" name="name" class="form-input" placeholder="Например: Алина" required minlength="2">
+                <span class="form-error-msg" id="nameError">Пожалуйста, введите ваше имя</span>
+              </div>
+
+              <div class="form-group">
+                <label for="userPhone" class="form-label">Номер телефона <span class="req">*</span></label>
+                <input type="tel" id="userPhone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                <span class="form-error-msg" id="phoneError">Введите корректный номер телефона</span>
+              </div>
+
+              <div class="form-group">
+                <label for="userDirection" class="form-label">Интересующее направление</label>
+                <select id="userDirection" name="direction" class="form-select">
+                  <option value="Общий английский (от Starter до Advanced)">Общий английский (Starter → Advanced)</option>
+                  <option value="IELTS подготовка">IELTS подготовка</option>
+                  <option value="Speaking Club">Speaking Club</option>
+                  <option value="Английский для детей">Английский для детей</option>
+                  <option value="Английский для школьников">Английский для школьников</option>
+                  <option value="Английский для подростков">Английский для подростков</option>
+                  <option value="Английский для взрослых">Английский для взрослых</option>
+                  <option value="Обучение за рубежом и гранты">Обучение за рубежом и гранты</option>
+                  <option value="Летний лагерь (Малайзия)">Летний лагерь (Малайзия)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="userBranch" class="form-label">Удобный филиал в Шымкенте</label>
+                <select id="userBranch" name="branch" class="form-select">
+                  <option value="Филиал SEVER (ул. Рыскулова 72/8)">Филиал SEVER (ул. Рыскулова, 72/8, 4 этаж)</option>
+                  <option value="Филиал YANGI SHAHAR (Тамерлановское шоссе 3/4)">Филиал YANGI SHAHAR (Тамерлановское шоссе, 3/4, 2 этаж)</option>
+                  <option value="Любой / Пока не знаю">Любой / Нужна консультация</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-accent btn-full btn-lg btn-shine" id="submitFormBtn">
+                <span>Записаться на пробный урок</span>
+                <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+
+              <p class="form-privacy-note">
+                Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Мы не передаем контакты третьим лицам.
+              </p>
+            </form>
+
+            <!-- Form Success Modal / Message Overlay -->
+            <div id="formSuccessMessage" class="form-success-overlay" aria-hidden="true">
+              <div class="success-box">
+                <div class="success-icon-check">✓</div>
+                <h3 class="success-title">Спасибо за заявку!</h3>
+                <p class="success-text">
+                  Мы получили ваши данные и свяжемся с вами в течение 15 минут для подтверждения времени пробного урока.
+                </p>
+                <button type="button" class="btn btn-accent btn-sm" id="resetSuccessBtn">Понятно</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       13. ФУТЕР (Dark Deep Blue #0F2A6B)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Info -->
+        <div class="footer-col brand-col">
+          <a href="#hero" class="brand-logo footer-logo" aria-label="One English — Главная">
+            <span class="logo-mark">
+              <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="12" fill="#0F2A6B" stroke="#FFB703" stroke-width="2"/>
+                <path d="M12 28V12L20 20L28 12V28" stroke="#FFB703" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="27" r="2.5" fill="#FFB703"/>
+              </svg>
+            </span>
+            <div class="logo-text">
+              <span class="brand-name text-white">ONE<span class="brand-accent">ENGLISH</span></span>
+              <span class="brand-sub text-white-muted">Language School · Shymkent</span>
+            </div>
+          </a>
+          <p class="footer-bio text-white-muted">
+            Школа английского языка в Шымкенте. Работаем с 2020 года. Курсы для детей, школьников, подростков и взрослых. Подготовка к IELTS 7.5–8.0, Speaking Club и зарубежные программы.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com/1eng.kz" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram @1eng.kz">
+              <span>📷 @1eng.kz</span>
+            </a>
+            <a href="https://wa.me/77473333536" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp">
+              <span>💬 WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Навигация</h4>
+          <ul class="footer-links-list">
+            <li><a href="#programs">Направления обучения</a></li>
+            <li><a href="#levels">Уровни (A1–C1)</a></li>
+            <li><a href="#format">Формат занятий</a></li>
+            <li><a href="#ielts">IELTS подготовка</a></li>
+            <li><a href="#coins">OneEnglishCoin 🪙</a></li>
+            <li><a href="#speaking">Speaking Club</a></li>
+            <li><a href="#camp">Летний лагерь</a></li>
+            <li><a href="#abroad">Обучение за рубежом</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Branches -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Филиалы в Шымкенте</h4>
+          <div class="footer-branch-item">
+            <strong>Филиал SEVER</strong>
+            <p>ул. Рыскулова, 72/8, 4 этаж</p>
+          </div>
+          <div class="footer-branch-item">
+            <strong>Филиал YANGI SHAHAR</strong>
+            <p>Тамерлановское шоссе, 3/4, 2 этаж</p>
+          </div>
+          <div class="footer-branch-item">
+            <strong>Расписание</strong>
+            <p>Занятия 3 раза в неделю</p>
+          </div>
+        </div>
+
+        <!-- Col 4: Contacts -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Связь</h4>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+77473333536">📞 +7 747 333 35 36</a></li>
+            <li><a href="tel:+77763333536">📞 +7 776 333 35 36</a></li>
+            <li><a href="https://instagram.com/1eng.kz" target="_blank" rel="noopener noreferrer">📷 Instagram: @1eng.kz</a></li>
+            <li><a href="https://wa.me/77473333536" target="_blank" rel="noopener noreferrer">💬 WhatsApp чат</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>© 2020–2026 One English. Все права защищены. Школа английского языка в Шымкенте.</p>
+        <p class="footer-sub-note">Качественное образование, проверенное временем.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FLOATING ACTIONS (WhatsApp & Scroll to top)
+       ========================================================================= -->
+  <div class="floating-actions-wrap" aria-label="Быстрые действия">
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Вернуться наверх" title="Наверх">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/77473333536" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Написать в WhatsApp" title="Связаться в WhatsApp">
+      <span class="whatsapp-pulse"></span>
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="#FFFFFF">
+        <path d="M16 2a14 14 0 00-12.1 21L2 30l7.3-1.9A14 14 0 1016 2zm0 25.5a11.5 11.5 0 01-5.9-1.6l-.4-.2-4.4 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1116 27.5zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.2-.7.1a9 9 0 01-2.6-1.6 9.9 9.9 0 01-1.8-2.2c-.2-.3 0-.5.1-.7s.3-.4.5-.6.2-.3.3-.5a.6.6 0 000-.6c-.1-.2-.8-2-1.1-2.7s-.6-.6-.8-.6h-.7a1.4 1.4 0 00-1 .5 4.3 4.3 0 00-1.3 3.2 7.5 7.5 0 001.6 4 17.2 17.2 0 006.6 5.8c.8.4 1.5.6 2 .7a4.9 4.9 0 002.3.1 3.7 3.7 0 002.4-1.7 3 3 0 00.2-1.7c-.2-.2-.5-.3-.9-.5z"/>
+      </svg>
+      <span class="whatsapp-tooltip">Напишите нам в WhatsApp!</span>
+    </a>
+  </div>
+
+  <!-- Falling Coins Canvas for Interactive Coin Burst -->
+  <canvas id="coinsCanvas" class="coins-canvas-overlay" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
