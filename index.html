@@ -816,85 +816,213 @@
 
         <!-- Interactive Coin Showcase & Playground -->
         <div class="coins-interactive-dashboard reveal-scale">
+          <!-- Left: 3D Coin & Live Balance & Lesson Tasks -->
           <div class="dashboard-left">
-            <!-- 3D Coin Canvas / CSS Coin -->
-            <div class="coin-3d-scene" id="coin3dScene" title="Нажмите, чтобы раскрутить монету!">
-              <div class="coin-3d-object" id="coin3dObject">
-                <div class="coin-face coin-front">
-                  <div class="coin-inner-ring">
-                    <span class="coin-face-number">1</span>
-                    <span class="coin-face-text">ONE COIN</span>
+            <div class="coin-showcase-header">
+              <!-- 3D Coin Canvas / CSS Coin -->
+              <div class="coin-3d-scene" id="coin3dScene" title="Нажмите, чтобы раскрутить монету!">
+                <div class="coin-3d-object" id="coin3dObject">
+                  <div class="coin-face coin-front">
+                    <div class="coin-inner-ring">
+                      <span class="coin-face-number">1</span>
+                      <span class="coin-face-text">ONE COIN</span>
+                    </div>
                   </div>
-                </div>
-                <div class="coin-face coin-back">
-                  <div class="coin-inner-ring">
-                    <span class="coin-face-icon">⭐</span>
-                    <span class="coin-face-text">SHYMKENT</span>
+                  <div class="coin-face coin-back">
+                    <div class="coin-inner-ring">
+                      <span class="coin-face-icon">⭐</span>
+                      <span class="coin-face-text">SHYMKENT</span>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div class="coin-live-counter-box">
+                <span class="counter-label">Твой баланс:</span>
+                <div class="counter-val">
+                  <strong id="userDemoCoins">25</strong> <span class="text-gold">Coins 🪙</span>
+                </div>
+                <p class="counter-hint">Монеты выдаются преподавателем за реальные успехи и выполнение уроков!</p>
+              </div>
             </div>
 
-            <div class="coin-interactive-actions">
-              <button class="btn btn-accent btn-shine" id="earnCoinBtn">
-                <span>🪙 Заработать монету!</span>
-              </button>
-              <div class="coin-live-counter">
-                <span>Твой демо-баланс:</span>
-                <strong id="userDemoCoins">50</strong> <span class="text-gold">Coins</span>
+            <!-- Lesson Tasks Block (Учебные задания) -->
+            <div class="tasks-lesson-block">
+              <div class="tasks-header">
+                <div>
+                  <h4 class="tasks-title">📚 Задания на уроках</h4>
+                  <p class="tasks-subtitle">Выполняй задания урока, чтобы заработать OneEnglishCoin:</p>
+                </div>
+                <button class="btn-reset-tasks" id="resetTasksBtn" title="Обновить задания для демонстрации">🔄 Сброс</button>
+              </div>
+
+              <div class="lesson-tasks-list">
+                <!-- Task 1: HW -->
+                <div class="lesson-task-item" id="taskItemHw">
+                  <div class="task-info">
+                    <div class="task-icon">📖</div>
+                    <div class="task-texts">
+                      <div class="task-name">Сдать домашнее задание (ДЗ)</div>
+                      <div class="task-desc">Выполни упражнения в тетради без опозданий</div>
+                    </div>
+                  </div>
+                  <div class="task-action-wrap">
+                    <span class="task-reward">+10 🪙</span>
+                    <button class="btn-task-action" data-task-id="hw" data-task-reward="10">
+                      Сдать ДЗ
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Task 2: Speaking -->
+                <div class="lesson-task-item" id="taskItemSpeaking">
+                  <div class="task-info">
+                    <div class="task-icon">🗣️</div>
+                    <div class="task-texts">
+                      <div class="task-name">Ответ на уроке / Speaking Club</div>
+                      <div class="task-desc">Активное участие в диалогах и у доски</div>
+                    </div>
+                  </div>
+                  <div class="task-action-wrap">
+                    <span class="task-reward">+15 🪙</span>
+                    <button class="btn-task-action" data-task-id="speaking" data-task-reward="15">
+                      Ответить
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Task 3: Mini Quiz -->
+                <div class="lesson-task-item" id="taskItemQuiz">
+                  <div class="task-info">
+                    <div class="task-icon">⚡</div>
+                    <div class="task-texts">
+                      <div class="task-name">Мини-квиз по английскому</div>
+                      <div class="task-desc">Ответь правильно на 1 вопрос урока</div>
+                    </div>
+                  </div>
+                  <div class="task-action-wrap">
+                    <span class="task-reward">+20 🪙</span>
+                    <button class="btn-task-action" data-task-id="quiz" data-task-reward="20">
+                      Пройти квиз
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Task 4: Attendance -->
+                <div class="lesson-task-item" id="taskItemAttendance">
+                  <div class="task-info">
+                    <div class="task-icon">🎯</div>
+                    <div class="task-texts">
+                      <div class="task-name">Урок вовремя без опозданий</div>
+                      <div class="task-desc">100% пунктуальность на занятии</div>
+                    </div>
+                  </div>
+                  <div class="task-action-wrap">
+                    <span class="task-reward">+10 🪙</span>
+                    <button class="btn-task-action" data-task-id="attendance" data-task-reward="10">
+                      Отметить
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inline Quiz container for Task 3 -->
+              <div class="quiz-inline-card" id="quizInlineCard" style="display: none;">
+                <div class="quiz-inline-header">
+                  <span class="quiz-q-badge">Вопрос урока:</span>
+                  <p class="quiz-q-text">Choose the correct sentence:</p>
+                </div>
+                <div class="quiz-options-list">
+                  <button class="quiz-opt-btn" data-correct="false">She don't like coffee</button>
+                  <button class="quiz-opt-btn" data-correct="true">She doesn't like coffee</button>
+                  <button class="quiz-opt-btn" data-correct="false">She isn't like coffee</button>
+                </div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
               </div>
             </div>
           </div>
 
+          <!-- Right: Gifts Catalog & Redemption -->
           <div class="dashboard-right">
             <div class="gifts-catalog-head">
-              <h3 class="gifts-catalog-title">Подарки за OneEnglishCoin</h3>
-              <p class="gifts-catalog-desc">Накапливайте монеты за активность на уроках и обменивайте на подарки:</p>
+              <div class="gifts-head-flex">
+                <div>
+                  <h3 class="gifts-catalog-title">Подарки за OneEnglishCoin 🎁</h3>
+                  <p class="gifts-catalog-desc">Копи монеты за учебу и обменивай их на реальные призы школы:</p>
+                </div>
+                <div class="gifts-balance-pill">
+                  Баланс: <span id="giftsCatalogBalance">25</span> 🪙
+                </div>
+              </div>
             </div>
 
-            <!-- 6 Gift Tiers -->
+            <!-- 6 Gift Tiers with Exchange Actions -->
             <div class="gift-tiers-grid" id="giftTiersGrid">
-              <div class="gift-tier-card" data-tier-cost="5">
+              <div class="gift-tier-card" data-tier-cost="5" data-gift-id="gift-pen" data-gift-name="Фирменная ручка One English">
                 <div class="gift-cost">5 🪙</div>
-                <div class="gift-box-icon">🎁</div>
-                <h4 class="gift-name">Подарок</h4>
-                <span class="gift-status status-unlocked">Доступно</span>
+                <div class="gift-box-icon">🖊️</div>
+                <h4 class="gift-name">Фирменная ручка</h4>
+                <div class="gift-desc-small">Стильная брендовая ручка One English</div>
+                <button class="btn-gift-redeem" data-cost="5">
+                  <span class="btn-text">Обменять за 5 🪙</span>
+                </button>
               </div>
 
-              <div class="gift-tier-card" data-tier-cost="10">
+              <div class="gift-tier-card" data-tier-cost="10" data-gift-id="gift-notebook" data-gift-name="Стикерпак & Блокнот One English">
                 <div class="gift-cost">10 🪙</div>
-                <div class="gift-box-icon">🎁</div>
-                <h4 class="gift-name">Подарок</h4>
-                <span class="gift-status status-unlocked">Доступно</span>
+                <div class="gift-box-icon">📒</div>
+                <h4 class="gift-name">Блокнот + Стикеры</h4>
+                <div class="gift-desc-small">Блокнот для записи новых слов и правил</div>
+                <button class="btn-gift-redeem" data-cost="10">
+                  <span class="btn-text">Обменять за 10 🪙</span>
+                </button>
               </div>
 
-              <div class="gift-tier-card" data-tier-cost="20">
+              <div class="gift-tier-card" data-tier-cost="20" data-gift-id="gift-bottle" data-gift-name="Термокружка / Эко-бутылка One English">
                 <div class="gift-cost">20 🪙</div>
-                <div class="gift-box-icon">🎁</div>
-                <h4 class="gift-name">Подарок</h4>
-                <span class="gift-status status-unlocked">Доступно</span>
+                <div class="gift-box-icon">🍶</div>
+                <h4 class="gift-name">Термокружка / Бутылка</h4>
+                <div class="gift-desc-small">Для воды и горячих напитков на уроках</div>
+                <button class="btn-gift-redeem" data-cost="20">
+                  <span class="btn-text">Обменять за 20 🪙</span>
+                </button>
               </div>
 
-              <div class="gift-tier-card" data-tier-cost="50">
+              <div class="gift-tier-card" data-tier-cost="50" data-gift-id="gift-hoodie" data-gift-name="Фирменное худи One English">
                 <div class="gift-cost">50 🪙</div>
-                <div class="gift-box-icon">🎁</div>
-                <h4 class="gift-name">Подарок</h4>
-                <span class="gift-status status-unlocked">Доступно</span>
+                <div class="gift-box-icon">👕</div>
+                <h4 class="gift-name">Фирменное худи</h4>
+                <div class="gift-desc-small">Тёплая брендированная толстовка школы</div>
+                <button class="btn-gift-redeem" data-cost="50">
+                  <span class="btn-text">Обменять за 50 🪙</span>
+                </button>
               </div>
 
-              <div class="gift-tier-card" data-tier-cost="100">
+              <div class="gift-tier-card" data-tier-cost="100" data-gift-id="gift-speaking" data-gift-name="1 месяц Speaking Club в подарок">
                 <div class="gift-cost">100 🪙</div>
-                <div class="gift-box-icon">🎁</div>
-                <h4 class="gift-name">Подарок</h4>
-                <span class="gift-status status-locked">Нужно больше</span>
+                <div class="gift-box-icon">🎟️</div>
+                <h4 class="gift-name">1 месяц Speaking Club</h4>
+                <div class="gift-desc-small">Месяц разговорных клубов с носителями</div>
+                <button class="btn-gift-redeem" data-cost="100">
+                  <span class="btn-text">Обменять за 100 🪙</span>
+                </button>
               </div>
 
-              <div class="gift-tier-card gift-tier-legendary" data-tier-cost="1000">
+              <div class="gift-tier-card gift-tier-legendary" data-tier-cost="1000" data-gift-id="gift-ipad" data-gift-name="Суперприз: Планшет или Путёвка">
                 <div class="gift-cost">1000 🪙</div>
                 <div class="gift-box-icon">👑</div>
                 <h4 class="gift-name">Супер-подарок</h4>
-                <span class="gift-status status-locked">Нужно больше</span>
+                <div class="gift-desc-small">Планшет iPad или путёвка в летний лагерь</div>
+                <button class="btn-gift-redeem" data-cost="1000">
+                  <span class="btn-text">Обменять за 1000 🪙</span>
+                </button>
               </div>
+            </div>
+
+            <!-- Claimed gifts history box -->
+            <div class="claimed-gifts-box" id="claimedGiftsBox" style="display: none;">
+              <h5 class="claimed-title">🎉 Ваши полученные подарки:</h5>
+              <div class="claimed-list" id="claimedList"></div>
             </div>
           </div>
         </div>
@@ -1682,6 +1810,30 @@
 
   <!-- Falling Coins Canvas for Interactive Coin Burst -->
   <canvas id="coinsCanvas" class="coins-canvas-overlay" aria-hidden="true"></canvas>
+
+  <!-- Gift Exchange Success Modal -->
+  <div class="gift-modal-backdrop" id="giftModal" aria-hidden="true" role="dialog" style="display: none;">
+    <div class="gift-modal-card">
+      <button class="gift-modal-close" id="closeGiftModal" aria-label="Закрыть">&times;</button>
+      <div class="gift-modal-confetti">🎉 🎁 ✨</div>
+      <h3 class="gift-modal-title">Поздравляем с подарком!</h3>
+      <p class="gift-modal-desc">
+        Вы успешно обменяли <strong id="modalCostText" class="text-gold">0 Coins</strong> на:
+      </p>
+      <div class="gift-modal-highlight">
+        <div class="modal-gift-icon" id="modalGiftIcon">🎁</div>
+        <div class="modal-gift-name" id="modalGiftName">Фирменная ручка One English</div>
+      </div>
+      <div class="gift-modal-voucher">
+        <span class="voucher-label">Ваш код для получения:</span>
+        <div class="voucher-code" id="modalPromoCode">OE-2026-X8</div>
+        <p class="voucher-hint">Покажите этот код на ресепшене в любом филиале One English в Шымкенте</p>
+      </div>
+      <button class="btn btn-accent btn-block" id="modalGotItBtn">
+        <span>Отлично, понятно! 👍</span>
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

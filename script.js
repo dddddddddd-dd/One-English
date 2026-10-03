@@ -435,40 +435,65 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     10. ONE ENGLISH COINS 🪙 INTERACTIVE SHOWCASE & BURST EFFECT
+     10. ONE ENGLISH COINS 🪙 INTERACTIVE SHOWCASE & LESSON TASKS & GIFTS REDEMPTION
      -------------------------------------------------------------------------- */
   const userDemoCoins = document.getElementById('userDemoCoins');
-  const earnCoinBtn = document.getElementById('earnCoinBtn');
+  const giftsCatalogBalance = document.getElementById('giftsCatalogBalance');
   const giftTierCards = document.querySelectorAll('.gift-tier-card');
   const coin3dScene = document.getElementById('coin3dScene');
   const coin3dObject = document.getElementById('coin3dObject');
   const coinsCanvas = document.getElementById('coinsCanvas');
 
-  let currentCoinCount = 50;
+  // Gift Modal Elements
+  const giftModal = document.getElementById('giftModal');
+  const closeGiftModal = document.getElementById('closeGiftModal');
+  const modalGotItBtn = document.getElementById('modalGotItBtn');
+  const modalCostText = document.getElementById('modalCostText');
+  const modalGiftIcon = document.getElementById('modalGiftIcon');
+  const modalGiftName = document.getElementById('modalGiftName');
+  const modalPromoCode = document.getElementById('modalPromoCode');
+  const claimedGiftsBox = document.getElementById('claimedGiftsBox');
+  const claimedList = document.getElementById('claimedList');
 
-  function updateGiftTiers(coins) {
+  // Task Action Elements
+  const taskActionBtns = document.querySelectorAll('.btn-task-action');
+  const resetTasksBtn = document.getElementById('resetTasksBtn');
+  const quizInlineCard = document.getElementById('quizInlineCard');
+  const quizOptBtns = document.querySelectorAll('.quiz-opt-btn');
+  const quizFeedback = document.getElementById('quizFeedback');
+
+  // Starting balance
+  let currentCoinCount = 25;
+  const completedTasks = new Set();
+  const redeemedGiftsHistory = [];
+
+  function updateBalanceUI() {
+    if (userDemoCoins) userDemoCoins.textContent = currentCoinCount;
+    if (giftsCatalogBalance) giftsCatalogBalance.textContent = currentCoinCount;
+
     giftTierCards.forEach(card => {
       const cost = parseInt(card.getAttribute('data-tier-cost'), 10);
-      const statusSpan = card.querySelector('.gift-status');
+      const redeemBtn = card.querySelector('.btn-gift-redeem');
+      const btnText = redeemBtn ? redeemBtn.querySelector('.btn-text') : null;
 
-      if (coins >= cost) {
+      if (currentCoinCount >= cost) {
         card.classList.add('unlocked-highlight');
-        if (statusSpan) {
-          statusSpan.className = 'gift-status status-unlocked';
-          statusSpan.textContent = 'Доступно!';
+        if (redeemBtn) {
+          redeemBtn.disabled = false;
+          if (btnText) btnText.textContent = `Обменять за ${cost} 🪙`;
         }
       } else {
         card.classList.remove('unlocked-highlight');
-        if (statusSpan) {
-          statusSpan.className = 'gift-status status-locked';
-          statusSpan.textContent = `Нужно ещё ${cost - coins}`;
+        if (redeemBtn) {
+          redeemBtn.disabled = true;
+          if (btnText) btnText.textContent = `Нужно ещё ${cost - currentCoinCount} 🪙`;
         }
       }
     });
   }
 
-  // Init gift tiers with current balance
-  updateGiftTiers(currentCoinCount);
+  // Initial update
+  updateBalanceUI();
 
   // 3D Coin Interactive Spin on Click
   if (coin3dScene && coin3dObject) {
@@ -492,13 +517,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', initCoinsCanvas);
   initCoinsCanvas();
 
-  function spawnCoinsBurst(originX, originY) {
+  function spawnCoinsBurst(originX, originY, particleCount = 35) {
     if (!coinsCanvas || prefersReducedMotion) return;
-    const ctx = coinsCanvas.getContext('2d');
     const coinColors = ['#FFB703', '#ffc42e', '#ffe07a', '#e5a400'];
 
-    const count = 35;
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < particleCount; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = Math.random() * 8 + 4;
       coinsParticles.push({
@@ -570,16 +593,194 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (earnCoinBtn) {
-    earnCoinBtn.addEventListener('click', (e) => {
-      currentCoinCount += 15;
-      if (userDemoCoins) userDemoCoins.textContent = currentCoinCount;
-      updateGiftTiers(currentCoinCount);
+  /* --------------------------------------------------------------------------
+     A. LESSON TASKS REWARD LOGIC (Dars qilib tanga olish)
+     -------------------------------------------------------------------------- */
+  taskActionBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const taskId = btn.getAttribute('data-task-id');
+      const reward = parseInt(btn.getAttribute('data-task-reward'), 10) || 10;
 
-      const rect = earnCoinBtn.getBoundingClientRect();
-      const clickX = rect.left + rect.width / 2;
-      const clickY = rect.top + rect.height / 2;
-      spawnCoinsBurst(clickX, clickY);
+      if (completedTasks.has(taskId)) return;
+
+      // Special handling for mini-quiz
+      if (taskId === 'quiz') {
+        if (quizInlineCard) {
+          quizInlineCard.style.display = quizInlineCard.style.display === 'none' ? 'block' : 'none';
+        }
+        return;
+      }
+
+      // Normal lesson task completion
+      completeLessonTask(btn, taskId, reward, e);
+    });
+  });
+
+  function completeLessonTask(btn, taskId, reward, event) {
+    if (completedTasks.has(taskId)) return;
+    completedTasks.add(taskId);
+
+    btn.disabled = true;
+    btn.classList.add('done');
+    btn.textContent = 'Выполнено ✅';
+
+    const taskItem = btn.closest('.lesson-task-item');
+    if (taskItem) taskItem.classList.add('task-done');
+
+    // Add coins
+    currentCoinCount += reward;
+    updateBalanceUI();
+
+    // Trigger burst
+    const rect = btn.getBoundingClientRect();
+    const clickX = event ? (event.clientX || rect.left + rect.width / 2) : (rect.left + rect.width / 2);
+    const clickY = event ? (event.clientY || rect.top + rect.height / 2) : (rect.top + rect.height / 2);
+    spawnCoinsBurst(clickX, clickY, 25);
+  }
+
+  // Quiz Answer options
+  if (quizOptBtns.length > 0) {
+    quizOptBtns.forEach(optBtn => {
+      optBtn.addEventListener('click', (e) => {
+        const isCorrect = optBtn.getAttribute('data-correct') === 'true';
+
+        if (isCorrect) {
+          optBtn.classList.add('correct');
+          if (quizFeedback) {
+            quizFeedback.textContent = 'Верно! Отличная грамматика! (+20 Coins) 🎉';
+            quizFeedback.style.color = '#15803d';
+          }
+
+          const quizTaskBtn = document.querySelector('.btn-task-action[data-task-id="quiz"]');
+          if (quizTaskBtn) {
+            completeLessonTask(quizTaskBtn, 'quiz', 20, e);
+          }
+
+          setTimeout(() => {
+            if (quizInlineCard) quizInlineCard.style.display = 'none';
+          }, 1500);
+        } else {
+          optBtn.classList.add('wrong');
+          if (quizFeedback) {
+            quizFeedback.textContent = 'Не совсем так. Попробуйте еще раз!';
+            quizFeedback.style.color = '#dc2626';
+          }
+          setTimeout(() => {
+            optBtn.classList.remove('wrong');
+          }, 1000);
+        }
+      });
+    });
+  }
+
+  // Reset Tasks button (Demonstratsiya uchun qayta tiklash)
+  if (resetTasksBtn) {
+    resetTasksBtn.addEventListener('click', () => {
+      completedTasks.clear();
+      taskActionBtns.forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove('done');
+        const taskId = btn.getAttribute('data-task-id');
+        if (taskId === 'hw') btn.textContent = 'Сдать ДЗ';
+        else if (taskId === 'speaking') btn.textContent = 'Ответить';
+        else if (taskId === 'quiz') btn.textContent = 'Пройти квиз';
+        else if (taskId === 'attendance') btn.textContent = 'Отметить';
+      });
+
+      document.querySelectorAll('.lesson-task-item').forEach(item => {
+        item.classList.remove('task-done');
+      });
+
+      if (quizInlineCard) {
+        quizInlineCard.style.display = 'none';
+        quizOptBtns.forEach(b => b.classList.remove('correct', 'wrong'));
+        if (quizFeedback) quizFeedback.textContent = '';
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     B. GIFTS EXCHANGE LOGIC (Подарки за монеты — обменять и забрать)
+     -------------------------------------------------------------------------- */
+  giftTierCards.forEach(card => {
+    const redeemBtn = card.querySelector('.btn-gift-redeem');
+    if (!redeemBtn) return;
+
+    redeemBtn.addEventListener('click', (e) => {
+      const cost = parseInt(card.getAttribute('data-tier-cost'), 10);
+      const giftName = card.getAttribute('data-gift-name') || 'Фирменный подарок One English';
+      const iconEl = card.querySelector('.gift-box-icon');
+      const giftIcon = iconEl ? iconEl.textContent.trim() : '🎁';
+
+      // Check balance
+      if (currentCoinCount < cost) {
+        alert(`Для получения этого подарка нужно ${cost} монет. У вас сейчас ${currentCoinCount} 🪙. Выполняйте уроки и домашние задания!`);
+        return;
+      }
+
+      // Deduct coins
+      currentCoinCount -= cost;
+      updateBalanceUI();
+
+      // Generate voucher code
+      const randomCode = `OE-${Math.floor(1000 + Math.random() * 9000)}-${cost}C`;
+
+      // Save to claimed history
+      redeemedGiftsHistory.push({
+        name: giftName,
+        icon: giftIcon,
+        cost: cost,
+        code: randomCode,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      });
+      renderClaimedGifts();
+
+      // Show celebration modal
+      if (modalCostText) modalCostText.textContent = `${cost} Coins`;
+      if (modalGiftIcon) modalGiftIcon.textContent = giftIcon;
+      if (modalGiftName) modalGiftName.textContent = giftName;
+      if (modalPromoCode) modalPromoCode.textContent = randomCode;
+
+      if (giftModal) {
+        giftModal.style.display = 'flex';
+        giftModal.setAttribute('aria-hidden', 'false');
+      }
+
+      // Trigger celebration coin burst
+      const rect = redeemBtn.getBoundingClientRect();
+      spawnCoinsBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 40);
+    });
+  });
+
+  function renderClaimedGifts() {
+    if (!claimedGiftsBox || !claimedList) return;
+    if (redeemedGiftsHistory.length === 0) {
+      claimedGiftsBox.style.display = 'none';
+      return;
+    }
+
+    claimedGiftsBox.style.display = 'block';
+    claimedList.innerHTML = redeemedGiftsHistory.map(g => `
+      <div class="claimed-item">
+        <span>${g.icon} <strong>${g.name}</strong> (${g.cost} 🪙)</span>
+        <span class="claimed-item-code">${g.code}</span>
+      </div>
+    `).join('');
+  }
+
+  // Modal Close Handlers
+  function hideGiftModal() {
+    if (giftModal) {
+      giftModal.style.display = 'none';
+      giftModal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  if (closeGiftModal) closeGiftModal.addEventListener('click', hideGiftModal);
+  if (modalGotItBtn) modalGotItBtn.addEventListener('click', hideGiftModal);
+  if (giftModal) {
+    giftModal.addEventListener('click', (e) => {
+      if (e.target === giftModal) hideGiftModal();
     });
   }
 

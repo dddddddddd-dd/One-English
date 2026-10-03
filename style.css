@@ -1692,27 +1692,35 @@ h1, h2, h3, h4, h5 {
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
-  padding: 44px;
+  padding: 36px 32px;
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: start;
 }
 
-/* 3D Coin CSS */
+/* Dashboard Left: Showcase & Lesson Tasks */
 .dashboard-left {
-  text-align: center;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.coin-showcase-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(15, 42, 107, 0.04) 0%, rgba(255, 183, 3, 0.08) 100%);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
 }
 
 .coin-3d-scene {
-  width: 170px;
-  height: 170px;
-  perspective: 800px;
-  margin: 0 auto 28px;
+  width: 100px;
+  height: 100px;
+  perspective: 600px;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
@@ -1739,8 +1747,8 @@ h1, h2, h3, h4, h5 {
   inset: 0;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffe07a 0%, var(--gold-500) 50%, var(--gold-600) 100%);
-  border: 5px solid #ffe89e;
-  box-shadow: 0 12px 35px var(--gold-glow), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+  border: 3px solid #ffe89e;
+  box-shadow: 0 8px 24px var(--gold-glow), inset 0 2px 4px rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1752,10 +1760,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .coin-inner-ring {
-  width: 80%;
-  height: 80%;
+  width: 82%;
+  height: 82%;
   border-radius: 50%;
-  border: 2px dashed rgba(15, 42, 107, 0.4);
+  border: 1.5px dashed rgba(15, 42, 107, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1764,7 +1772,7 @@ h1, h2, h3, h4, h5 {
 
 .coin-face-number {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 1.9rem;
   font-weight: 900;
   color: var(--blue-900);
   line-height: 1;
@@ -1772,117 +1780,586 @@ h1, h2, h3, h4, h5 {
 
 .coin-face-text {
   font-family: var(--font-heading);
-  font-size: 0.65rem;
+  font-size: 0.5rem;
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--blue-900);
 }
 
 .coin-face-icon {
-  font-size: 2.2rem;
+  font-size: 1.4rem;
 }
 
-.coin-live-counter {
-  margin-top: 14px;
-  font-size: 1rem;
+.coin-live-counter-box {
+  flex: 1;
+  text-align: left;
+}
+
+.counter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.coin-live-counter strong {
-  font-size: 1.3rem;
+.counter-val {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--blue-700);
+  margin: 2px 0 4px;
+}
+
+.counter-val strong {
+  font-size: 2rem;
+  font-family: var(--font-heading);
   color: var(--blue-700);
 }
 
-/* Gift Catalog Header & Tiers */
-.gifts-catalog-head {
-  margin-bottom: 24px;
+.counter-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Tasks Lesson Block (Topshiriqlar) */
+.tasks-lesson-block {
+  background: var(--milky-100);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(15, 42, 107, 0.08);
+}
+
+.tasks-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--blue-700);
+  margin: 0 0 2px;
+}
+
+.tasks-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.btn-reset-tasks {
+  background: none;
+  border: 1px solid rgba(15, 42, 107, 0.15);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-reset-tasks:hover {
+  background: #ffffff;
+  color: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.lesson-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-task-item {
+  background: #ffffff;
+  border: 1px solid rgba(15, 42, 107, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.lesson-task-item:hover {
+  border-color: rgba(255, 183, 3, 0.5);
+  box-shadow: 0 4px 14px rgba(15, 42, 107, 0.06);
+}
+
+.lesson-task-item.task-done {
+  background: rgba(34, 197, 94, 0.06);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.lesson-task-item.task-done .task-name {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.task-icon {
+  font-size: 1.4rem;
+  width: 38px;
+  height: 38px;
+  background: var(--milky-100);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.task-texts {
+  text-align: left;
+}
+
+.task-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  line-height: 1.3;
+}
+
+.task-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+}
+
+.task-action-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.task-reward {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #c98200;
+  background: rgba(255, 183, 3, 0.15);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.btn-task-action {
+  background: var(--blue-700);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-task-action:hover:not(:disabled) {
+  background: var(--blue-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 42, 107, 0.2);
+}
+
+.btn-task-action:disabled,
+.btn-task-action.done {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Inline Quiz Box */
+.quiz-inline-card {
+  margin-top: 14px;
+  background: #ffffff;
+  border: 1.5px solid var(--gold-500);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-inline-header {
+  margin-bottom: 10px;
+}
+
+.quiz-q-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--blue-700);
+  text-transform: uppercase;
+  background: rgba(15, 42, 107, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.quiz-q-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--blue-900);
+  margin: 4px 0 0;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quiz-opt-btn {
+  background: var(--milky-100);
+  border: 1px solid rgba(15, 42, 107, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quiz-opt-btn:hover {
+  background: rgba(255, 183, 3, 0.15);
+  border-color: var(--gold-500);
+}
+
+.quiz-opt-btn.correct {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #15803d;
+  font-weight: 700;
+}
+
+.quiz-opt-btn.wrong {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+
+.quiz-feedback {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Gifts Catalog (Right Side) */
+.gifts-head-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .gifts-catalog-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--blue-700);
-  margin-bottom: 6px;
+  margin: 0 0 4px;
 }
 
 .gifts-catalog-desc {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  margin: 0;
+}
+
+.gifts-balance-pill {
+  background: linear-gradient(135deg, var(--gold-500), #ffc42e);
+  color: var(--blue-900);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px var(--gold-glow);
 }
 
 /* 6 Gift Tiers Grid */
 .gift-tiers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 
 .gift-tier-card {
   background: var(--milky-100);
   border: 1.5px solid rgba(15, 42, 107, 0.08);
   border-radius: var(--radius-md);
-  padding: 16px 12px;
+  padding: 16px 12px 14px;
   text-align: center;
   transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
 
 .gift-tier-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 42, 107, 0.08);
 }
 
 .gift-cost {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--blue-700);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .gift-box-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 6px;
   transition: transform var(--transition-bounce);
 }
 
 .gift-tier-card:hover .gift-box-icon {
-  transform: scale(1.25) rotate(-6deg);
+  transform: scale(1.2) rotate(-6deg);
 }
 
 .gift-name {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--blue-700);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  line-height: 1.3;
 }
 
-.gift-status {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-}
-
-.status-unlocked {
-  background: var(--gold-500);
-  color: var(--blue-900);
-}
-
-.status-locked {
-  background: rgba(15, 42, 107, 0.1);
+.gift-desc-small {
+  font-size: 0.72rem;
   color: var(--text-muted);
+  line-height: 1.25;
+  margin-bottom: 12px;
+  min-height: 28px;
+}
+
+/* Redeem Gift Button */
+.btn-gift-redeem {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .gift-tier-card.unlocked-highlight {
   border-color: var(--gold-500);
   background: #ffffff;
-  box-shadow: 0 8px 20px var(--gold-glow);
+  box-shadow: 0 6px 18px var(--gold-glow);
+}
+
+.gift-tier-card.unlocked-highlight .btn-gift-redeem {
+  background: linear-gradient(135deg, var(--gold-500) 0%, #e5a400 100%);
+  color: var(--blue-900);
+  box-shadow: 0 4px 10px rgba(255, 183, 3, 0.4);
+}
+
+.gift-tier-card.unlocked-highlight .btn-gift-redeem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 183, 3, 0.6);
+}
+
+.gift-tier-card:not(.unlocked-highlight) .btn-gift-redeem {
+  background: rgba(15, 42, 107, 0.08);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.75;
 }
 
 .gift-tier-legendary {
   background: linear-gradient(135deg, rgba(255, 183, 3, 0.15) 0%, rgba(15, 42, 107, 0.05) 100%);
   border: 1.5px dashed var(--gold-500);
+}
+
+/* Claimed Gifts Box */
+.claimed-gifts-box {
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1.5px solid #22c55e;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-align: left;
+  animation: fadeInDown 0.3s ease;
+}
+
+.claimed-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #15803d;
+  margin: 0 0 8px;
+}
+
+.claimed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.claimed-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  background: #f0fdf4;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  color: #166534;
+}
+
+.claimed-item-code {
+  font-weight: 800;
+  font-family: monospace;
+  background: #dcfce7;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Gift Exchange Success Modal */
+.gift-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 42, 107, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.gift-modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 32px 28px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(15, 42, 107, 0.35);
+  animation: zoomInModal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes zoomInModal {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gift-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.gift-modal-confetti {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.gift-modal-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--blue-700);
+  margin-bottom: 6px;
+}
+
+.gift-modal-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.gift-modal-highlight {
+  background: var(--milky-100);
+  border: 1.5px solid var(--gold-500);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-gift-icon {
+  font-size: 2.6rem;
+  margin-bottom: 4px;
+}
+
+.modal-gift-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--blue-700);
+}
+
+.gift-modal-voucher {
+  background: #f8fafc;
+  border: 1.5px dashed rgba(15, 42, 107, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+}
+
+.voucher-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.voucher-code {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--blue-700);
+  letter-spacing: 2px;
+}
+
+.voucher-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin: 6px 0 0;
+  line-height: 1.3;
 }
 
 /* Coins Canvas Overlay */
